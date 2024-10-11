@@ -1,0 +1,216 @@
+:root {
+    /* Define color variables for the theme */
+    --gradient: linear-gradient(
+      180deg,
+      #A9F1DF 0%,
+      #FFBBBB 100%
+    );  /* Background gradient */
+    --dark: #001747;
+    --grey: #b1bacb;
+    --grey-border: rgba(0, 0, 0, 0.1);
+    --grey-light: #eeeeee;
+    --grey-dark: #405175;
+    --pink: #FFBBBB;
+    --green: #A9F1DF;
+    --white: #ffffff;
+}  
+
+html {
+    min-height: 100%;
+    background: var(--gradient); /* Apply gradient to the entire background */
+}
+
+body {
+    font-family: Arial, sans-serif; /* Font for the entire page */
+    margin: 0; /* Remove default margin */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background: var(--gradient); /* Use the defined background gradient */
+}
+  
+.container {
+    width: 300px;
+    margin: 50px auto;
+    background: var(--white); /* White background for the container */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+  
+h1 {
+    text-align: center;
+    color: var(--pink); /* Pink text for the heading */
+    font-size: 2.5rem; /* Large font size for the title */
+    text-shadow:
+        -1px -1px 0 var(--green),  
+        1px -1px 0 var(--green),
+        -1px 1px 0 var(--green),
+        1px 1px 0 var(--green); /* Green outline effect for the title */
+}
+  
+form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Space between the form and the list */
+}
+  
+input {
+    width: 70%;
+    padding: 5px;
+    font-size: 16px;
+    border: 0.06rem solid var(--grey-border); /* Border for the input field */
+    border-radius: 0.5rem; /* Rounded corners for input field */
+}
+  
+input[type="text"]::placeholder {
+    color: var(--grey); /* Placeholder text color */
+}
+  
+button {
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: var(--pink); /* Pink background for buttons */
+    color: var(--white); /* White text */
+    border: none;
+    border-radius: 0.3rem; /* Rounded corners for buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+  
+/* Filter buttons styling */
+.filters button {
+    margin: 5px;
+    padding: 0.5rem;
+    background-color: var(--white); /* White background for filters */
+    color: var(--grey-dark); /* Dark grey text for filters */
+    border: 1px solid var(--pink); /* Pink border for filter buttons */
+    border-radius: 0.3rem; /* Rounded corners */
+    cursor: pointer;
+}
+
+.filters button:hover {
+    background-color: var(--green); /* Green background on hover */
+    color: var(--white); /* White text on hover */
+}
+
+/* Add a class to highlight the selected button */
+.filters button.active {
+    background-color: var(--green); /* Green background when active */
+    color: var(--white); /* White text when active */
+}
+
+  
+#task-list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 10px;
+    overflow-y: auto;
+    max-height: 200px; /* Max height for task list with scroll */
+    border: 1px solid var(--grey-border); /* Light border around task list */
+}
+  
+/* Task-list item layout */
+#task-list li {
+    display: flex;
+    align-items: center; /* Vertically align task items */
+    justify-content: space-between;
+    padding: 10px;
+    background: #f9f9f9; /* Light background for each task */
+    margin-bottom: 10px; /* Space between tasks */
+    border-radius: 5px; /* Rounded corners for tasks */
+}
+
+#task-list li span {
+    flex: 1; /* Task text takes remaining space */
+    padding-left: 10px; /* Space between checkbox and task text */
+}
+
+input[type="checkbox"] {
+    appearance: none; /* Remove default checkbox styling */
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border: 0.06rem solid var(--grey-border); /* Border for custom checkbox */
+    border-radius: 50%; /* Circular checkbox */
+    background-color: transparent; /* Transparent when unchecked */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for when checkbox is checked */
+input[type="checkbox"]:checked {
+    background-color: var(--green); /* Green background when checked */
+}
+
+/* Checkmark styling */
+input[type="checkbox"]::before {
+    content: "\2713"; /* Unicode checkmark symbol */
+    display: block;
+    font-size: 1rem;
+    color: var(--white); /* White checkmark */
+    text-align: center;
+    line-height: 20px; /* Vertically center the checkmark */
+    position: relative;
+    top: -1px; /* Slight adjustment for centering */
+}
+
+/* Cross button (delete task) styling */
+button.delete-task {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--pink); /* Pink cross for delete button */
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+button.delete-task:hover {
+    color: var(--dark); /* Darker color on hover */
+}
+  
+.counter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+  
+.counter-container p {
+    margin: 0;
+    color: var(--grey-dark); /* Dark grey text for task counter */
+}
+  
+.counter-container button {
+    border: none;
+    background-color: transparent;
+    color: var(--pink); /* Pink text for delete all button */
+    font-size: 1rem;
+    cursor: pointer;
+}
+  
+.counter-container button:hover {
+    color: var(--dark); /* Darker text on hover */
+}
+  
+footer {
+    margin-top: 20px;
+    text-align: center;
+    background-color: var(--white); /* White background for footer */
+    padding: 10px;
+    border-radius: 0.5rem; /* Rounded corners */
+    box-shadow: 0 1rem 3rem 1rem rgba(0, 23, 71, 0.15); /* Subtle shadow effect */
+}
+  
+.made-by {
+    margin: 0;
+    color: var(--grey-dark); /* Footer text color */
+}
+  
+.author {
+    color: var(--green); /* Green color for author name */
+    font-weight: bold;
+    font-family: "Cursive", "Lucida Handwriting", "Brush Script MT", cursive; /* Cursive font for author */
+}
