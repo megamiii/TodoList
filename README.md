@@ -1,4 +1,4 @@
-# Todo List Application
+# Todo List Web Application
 
 A simple, interactive to-do list application where users can add, mark as complete, and delete tasks. This app provides filtering options to display all tasks, only completed tasks, or only incomplete tasks.
 
